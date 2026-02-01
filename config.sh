@@ -7,6 +7,7 @@ tmux-create-fast-key-session() {
   tmux new-session -d -s secondary_fast_key_session
   tmux new-session -d -s main_fast_key_session
   tmux new-session -d -s ternary_fast_key_session
+  tmux new-session -d -s fourth_no_fast_key_session
 
   # Attach to the main session (or adjust to your preference)
   tmux attach-session -t main_fast_key_session
