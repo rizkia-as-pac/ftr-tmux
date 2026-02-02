@@ -1,5 +1,12 @@
 alias tl="tmux list-session"
 alias ta='tmux a -t $(tmux ls | fzf | awk -F": " "{print \$1}")'
+alias ts="tmux-fzf-session"
+
+tmux-fzf-session() {
+  local session
+  session=$(tmux list-sessions -F "#{session_name}" | fzf)
+  [ -n "$session" ] && tmux switch-client -t "$session"
+}
 
 # Alias to create tmux sessions with name that support for fast key bindings
 tmux-create-fast-key-session() {
